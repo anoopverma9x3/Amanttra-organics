@@ -1,0 +1,447 @@
+/* ROOT */
+
+#root{
+  width:100%;
+  margin:0;
+  padding:0;
+}
+
+/* GENERAL */
+
+body{
+  font-family: Arial, Helvetica, sans-serif;
+  margin:0;
+  padding:0;
+  background:#f8f8f8;
+}
+
+/* SECTION */
+
+.products-section{
+  padding:70px 10%;
+  text-align:center;
+}
+
+/* PRODUCT GRID */
+
+.product-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+  padding:40px;
+}
+
+/* PRODUCT CARD */
+
+.product-card{
+  background:white;
+  border-radius:12px;
+  padding:20px;
+  text-align:center;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.product-card:hover{
+  transform:translateY(-8px);
+}
+
+/* PRODUCT IMAGE */
+
+.product-img img{
+  width:100%;
+  height:200px;
+  object-fit:contain;
+}
+
+/* PRODUCT TEXT */
+
+.product-info h3{
+  margin:10px 0;
+}
+
+.price{
+  font-size:18px;
+  font-weight:bold;
+  color:#2e7d32;
+  margin-bottom:15px;
+}
+
+/* BUTTON */
+
+.buy-btn{
+  padding:10px 20px;
+  border:none;
+  background:#2e7d32;
+  color:white;
+  border-radius:6px;
+  cursor:pointer;
+  font-weight:bold;
+}
+
+.buy-btn:hover{
+  background:#1b5e20;
+}
+
+
+/* WHY CHOOSE US SECTION */
+
+.why{
+  padding:80px 10%;
+  background:#f8f8f8;
+  text-align:center;
+}
+
+.why h2{
+  font-size:32px;
+  margin-bottom:50px;
+  color:#1b5e20;
+}
+
+/* GRID */
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+/* CARD */
+
+.why-card{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.why-card:hover{
+  transform:translateY(-8px);
+}
+
+/* TEXT */
+
+.why-card h3{
+  margin-bottom:15px;
+  color:#2e7d32;
+}
+
+.why-card p{
+  color:#555;
+  font-size:16px;
+}
+/* WHY SECTION */
+
+.why{
+  padding:80px 10%;
+  background:#f8f8f8;
+  text-align:center;
+}
+
+.why h2{
+  font-size:32px;
+  margin-bottom:50px;
+  color:#1b5e20;
+}
+
+.why-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+  gap:30px;
+}
+
+.why-card{
+  background:white;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 5px 15px rgba(0,0,0,0.1);
+  transition:0.3s;
+}
+
+.why-card:hover{
+  transform:translateY(-8px);
+}
+
+/* ICON */
+
+.why-icon{
+  font-size:40px;
+  color:#2e7d32;
+  margin-bottom:15px;
+}
+
+.why-card h3{
+  margin-bottom:10px;
+}
+
+.why-card p{
+  color:#555;
+}
+
+.cart-page{
+  padding:40px;
+  max-width:900px;
+  margin:auto;
+}
+
+.cart-page h1{
+  text-align:center;
+  margin-bottom:30px;
+}
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.cart-item img{
+  width:80px;
+  border-radius:8px;
+}
+
+.cart-info{
+  flex:1;
+  margin-left:20px;
+}
+
+.cart-info h3{
+  margin-bottom:5px;
+}
+
+.cart-price{
+  font-weight:bold;
+  color:#2e7d32;
+}
+
+.cart-actions{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.cart-actions button{
+  border:none;
+  padding:6px 12px;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+.cart-actions button:hover{
+  opacity:0.8;
+}
+
+.cart-total{
+  text-align:right;
+  font-size:22px;
+  margin-top:20px;
+  font-weight:bold;
+}
+.cart-section{
+  position: relative;
+}
+
+.cart-icon{
+  font-size:24px;
+  color:#333;
+  position:relative;
+}
+
+.cart-count{
+  position:absolute;
+  top:-8px;
+  right:-10px;
+  background:#ff4d4d;
+  color:white;
+  font-size:12px;
+  width:18px;
+  height:18px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+.cart-page{
+  max-width:900px;
+  margin:auto;
+  padding:40px;
+}
+
+.cart-item{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  background:#fff;
+  padding:20px;
+  margin-bottom:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+}
+
+.cart-item img{
+  width:70px;
+  border-radius:8px;
+}
+
+.cart-info{
+  flex:1;
+  margin-left:20px;
+}
+
+.cart-qty{
+  display:flex;
+  align-items:center;
+  gap:10px;
+}
+
+.cart-qty button{
+  padding:5px 10px;
+  border:none;
+  background:#eee;
+  cursor:pointer;
+}
+
+.remove-btn{
+  background:#ff4d4d;
+  color:white;
+  border:none;
+  padding:8px 12px;
+  border-radius:6px;
+  cursor:pointer;
+}
+
+.cart-total{
+  margin-top:30px;
+  text-align:right;
+}
+
+.checkout-btn{
+  margin-top:10px;
+  padding:12px 20px;
+  background:#2e7d32;
+  color:white;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+.auth-container{
+  max-width:400px;
+  margin:auto;
+  padding:40px;
+}
+
+.auth-container form{
+  display:flex;
+  flex-direction:column;
+  gap:15px;
+}
+
+.auth-container input{
+  padding:10px;
+  border:1px solid #ccc;
+  border-radius:5px;
+}
+
+.auth-container button{
+  padding:12px;
+  background:#2e7d32;
+  color:white;
+  border:none;
+  border-radius:5px;
+  cursor:pointer;
+}
+
+/* HERO SECTION */
+.hero {
+  height: 85vh;
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+
+  position: relative;   /* ✅ important */
+}
+
+.overlay {
+  position: absolute;   /* ✅ key fix */
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background: rgba(0, 0, 0, 0.5);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* CONTENT */
+.hero-content {
+  text-align: center;
+  color: white;
+  max-width: 700px;
+  padding: 20px;
+}
+
+.hero-content h1 {
+  font-size: 3rem;
+  font-weight: bold;
+}
+
+.hero-content p {
+  margin: 15px 0;
+  font-size: 1.2rem;
+}
+
+/* BUTTONS */
+.hero-buttons {
+  margin-top: 20px;
+}
+
+.shop-btn {
+  background: #4CAF50;
+  color: white;
+  padding: 12px 25px;
+  border: none;
+  margin-right: 10px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.learn-btn {
+  background: transparent;
+  border: 2px solid white;
+  color: white;
+  padding: 12px 25px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.shop-btn:hover {
+  background: #45a049;
+}
+
+.learn-btn:hover {
+  background: white;
+  color: black;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 2rem;
+  }
+
+  .hero-content p {
+    font-size: 1rem;
+  }
+}

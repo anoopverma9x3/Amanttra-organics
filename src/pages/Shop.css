@@ -1,0 +1,145 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+:root {
+  --shop-green-deep:   #1a3a1f;
+  --shop-green-mid:    #2d6a4f;
+  --shop-green-light:  #52b788;
+  --shop-green-accent: #95d5b2;
+  --shop-cream:        #f4f0e8;
+  --shop-cream-dark:   #ebe6d8;
+  --shop-text:         #2c3e2f;
+  --shop-text-muted:   #6b7c6e;
+}
+
+/* ─── Page Wrapper ───────────────────────────────────────── */
+.shop {
+  min-height: 100vh;
+  background: var(--shop-cream);
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── Header Banner ──────────────────────────────────────── */
+.shop-header {
+  background: var(--shop-green-deep);
+  padding: 120px 24px 64px;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.shop-header::before {
+  content: '';
+  position: absolute;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: rgba(82, 183, 136, 0.08);
+  top: -180px;
+  left: -100px;
+  pointer-events: none;
+}
+
+.shop-header::after {
+  content: '';
+  position: absolute;
+  width: 350px;
+  height: 350px;
+  border-radius: 50%;
+  background: rgba(149, 213, 178, 0.07);
+  bottom: -120px;
+  right: -60px;
+  pointer-events: none;
+}
+
+.shop-header-inner {
+  position: relative;
+  z-index: 1;
+}
+
+.shop-eyebrow {
+  display: inline-block;
+  font-size: 0.7rem;
+  font-weight: 500;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--shop-green-accent);
+  border: 1px solid rgba(149, 213, 178, 0.3);
+  padding: 5px 16px;
+  border-radius: 2px;
+  margin-bottom: 18px;
+}
+
+.shop-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.4rem, 5vw, 3.8rem);
+  font-weight: 700;
+  color: #ffffff;
+  margin: 0 0 16px;
+  line-height: 1.15;
+}
+
+.shop-title em {
+  font-style: italic;
+  color: var(--shop-green-accent);
+  position: relative;
+}
+
+.shop-title em::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 3px;
+  width: 100%;
+  height: 1.5px;
+  background: var(--shop-green-light);
+  opacity: 0.5;
+}
+
+.shop-subtitle {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.6);
+  max-width: 440px;
+  margin: 0 auto 28px;
+  line-height: 1.75;
+}
+
+.shop-header-line {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(90deg, var(--shop-green-light), var(--shop-green-accent));
+  margin: 0 auto;
+  border-radius: 2px;
+}
+
+/* ─── Shop Body ──────────────────────────────────────────── */
+.shop-body {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 64px 24px 100px;
+}
+
+/* ─── Product Grid ───────────────────────────────────────── */
+.product-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+@media (max-width: 960px) {
+  .product-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 560px) {
+  .product-grid {
+    grid-template-columns: 1fr;
+    max-width: 380px;
+    margin: 0 auto;
+  }
+
+  .shop-header {
+    padding: 100px 16px 50px;
+  }
+}

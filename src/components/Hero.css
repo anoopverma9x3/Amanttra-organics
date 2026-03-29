@@ -1,0 +1,375 @@
+/* ─── Google Fonts ─────────────────────────────────────── */
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=DM+Sans:wght@300;400;500&display=swap');
+
+/* ─── Variables ─────────────────────────────────────────── */
+:root {
+  --green-deep:   #1a3a1f;
+  --green-mid:    #2d6a4f;
+  --green-light:  #52b788;
+  --green-accent: #95d5b2;
+  --gold:         #c9a84c;
+  --cream:        #f8f4ec;
+  --white:        #ffffff;
+  --overlay-dark: rgba(10, 28, 14, 0.72);
+  --overlay-mid:  rgba(10, 28, 14, 0.35);
+}
+
+/* ─── Hero Shell ─────────────────────────────────────────── */
+.hero {
+  position: relative;
+  height: 92vh;
+  min-height: 580px;
+  overflow: hidden;
+  font-family: 'DM Sans', sans-serif;
+}
+
+/* ─── Background Slides ──────────────────────────────────── */
+.hero-bg {
+  position: absolute;
+  inset: 0;
+  background-size: cover;
+  background-position: center;
+  opacity: 0;
+  transform: scale(1.06);
+  transition: opacity 0.9s ease, transform 6s ease;
+  z-index: 1;
+}
+
+.hero-bg.active {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ─── Overlays ───────────────────────────────────────────── */
+.hero-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    135deg,
+    var(--overlay-dark) 0%,
+    var(--overlay-mid) 55%,
+    rgba(10, 28, 14, 0.55) 100%
+  );
+  z-index: 2;
+}
+
+/* Subtle grain texture for premium feel */
+.hero-grain {
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)'/%3E%3C/svg%3E");
+  background-size: 180px;
+  pointer-events: none;
+}
+
+/* ─── Corner Accents ─────────────────────────────────────── */
+.corner {
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  z-index: 5;
+  pointer-events: none;
+  opacity: 0.5;
+}
+
+.corner-tl {
+  top: 24px;
+  left: 24px;
+  border-top: 1.5px solid var(--green-accent);
+  border-left: 1.5px solid var(--green-accent);
+}
+
+.corner-br {
+  bottom: 24px;
+  right: 24px;
+  border-bottom: 1.5px solid var(--green-accent);
+  border-right: 1.5px solid var(--green-accent);
+}
+
+/* ─── Content ────────────────────────────────────────────── */
+.hero-content {
+  position: absolute;
+  z-index: 6;
+  top: 50%;
+  left: 8%;
+  transform: translateY(-50%);
+  max-width: 620px;
+  padding: 0 20px;
+}
+
+/* ─── Animations ─────────────────────────────────────────── */
+.hero-content.fade-in .hero-tag,
+.hero-content.fade-in .hero-title,
+.hero-content.fade-in .hero-text,
+.hero-content.fade-in .hero-actions,
+.hero-content.fade-in .hero-badge {
+  animation: slideUp 0.7s ease both;
+}
+
+.hero-content.fade-in .hero-title   { animation-delay: 0.1s; }
+.hero-content.fade-in .hero-text    { animation-delay: 0.2s; }
+.hero-content.fade-in .hero-actions { animation-delay: 0.3s; }
+.hero-content.fade-in .hero-badge   { animation-delay: 0.4s; }
+
+.hero-content.fade-out {
+  animation: fadeOut 0.45s ease forwards;
+}
+
+@keyframes slideUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeOut {
+  to { opacity: 0; transform: translateY(-14px); }
+}
+
+/* ─── Tag ────────────────────────────────────────────────── */
+.hero-tag {
+  display: inline-block;
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.72rem;
+  font-weight: 500;
+  letter-spacing: 0.22em;
+  text-transform: uppercase;
+  color: var(--green-accent);
+  border: 1px solid rgba(149, 213, 178, 0.4);
+  padding: 5px 14px;
+  border-radius: 2px;
+  margin-bottom: 20px;
+}
+
+/* ─── Title ──────────────────────────────────────────────── */
+.hero-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 5.5vw, 4.2rem);
+  font-weight: 700;
+  line-height: 1.12;
+  color: var(--white);
+  margin: 0 0 20px;
+}
+
+.hero-highlight {
+  font-style: italic;
+  color: var(--green-accent);
+  position: relative;
+}
+
+.hero-highlight::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: 2px;
+  width: 100%;
+  height: 1px;
+  background: var(--green-accent);
+  opacity: 0.5;
+}
+
+/* ─── Text ───────────────────────────────────────────────── */
+.hero-text {
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.82);
+  line-height: 1.7;
+  margin: 0 0 32px;
+  max-width: 480px;
+}
+
+/* ─── Buttons ────────────────────────────────────────────── */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: var(--green-light);
+  color: var(--green-deep);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 13px 28px;
+  border: none;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.25s, transform 0.2s, box-shadow 0.25s;
+  box-shadow: 0 4px 20px rgba(82, 183, 136, 0.3);
+}
+
+.btn-primary:hover {
+  background: var(--green-accent);
+  transform: translateY(-2px);
+  box-shadow: 0 8px 28px rgba(82, 183, 136, 0.45);
+}
+
+.btn-primary svg {
+  transition: transform 0.2s;
+}
+
+.btn-primary:hover svg {
+  transform: translateX(4px);
+}
+
+.btn-secondary {
+  background: transparent;
+  border: 1.5px solid rgba(255, 255, 255, 0.5);
+  color: var(--white);
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.9rem;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  padding: 13px 28px;
+  border-radius: 3px;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, color 0.25s;
+}
+
+.btn-secondary:hover {
+  background: rgba(255, 255, 255, 0.12);
+  border-color: white;
+}
+
+/* ─── Badge ──────────────────────────────────────────────── */
+.hero-badge {
+  display: inline-block;
+  margin-top: 28px;
+  font-size: 0.8rem;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 0.65);
+  letter-spacing: 0.08em;
+}
+
+/* ─── Arrows ─────────────────────────────────────────────── */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 7;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.08);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 50%;
+  color: white;
+  cursor: pointer;
+  transition: background 0.25s, border-color 0.25s, transform 0.2s;
+  backdrop-filter: blur(6px);
+}
+
+.arrow:hover {
+  background: rgba(255, 255, 255, 0.18);
+  border-color: rgba(255, 255, 255, 0.5);
+  transform: translateY(-50%) scale(1.08);
+}
+
+.arrow-left  { left: 28px; }
+.arrow-right { right: 28px; }
+
+/* ─── Footer: counter + dots ─────────────────────────────── */
+.hero-footer {
+  position: absolute;
+  bottom: 36px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 7;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.slide-counter {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1rem;
+  color: rgba(255, 255, 255, 0.55);
+}
+
+.slide-counter strong {
+  color: white;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+.slide-counter .divider {
+  margin: 0 6px;
+  opacity: 0.4;
+}
+
+.dots {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.35);
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.3s, width 0.35s, border-radius 0.35s;
+}
+
+.dot.active {
+  background: var(--green-accent);
+  width: 24px;
+  border-radius: 3px;
+}
+
+/* ─── Progress Bar ───────────────────────────────────────── */
+.hero-progress {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: rgba(255, 255, 255, 0.1);
+  z-index: 8;
+}
+
+.hero-progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--green-light), var(--green-accent));
+  animation: progressAnim 5s linear forwards;
+  transform-origin: left;
+}
+
+@keyframes progressAnim {
+  from { width: 0%; }
+  to   { width: 100%; }
+}
+
+/* ─── Responsive ─────────────────────────────────────────── */
+@media (max-width: 768px) {
+  .hero-content {
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+    width: 90%;
+  }
+
+  .hero-actions {
+    justify-content: center;
+  }
+
+  .hero-highlight::after {
+    display: none;
+  }
+
+  .arrow-left  { left: 12px; }
+  .arrow-right { right: 12px; }
+
+  .corner { display: none; }
+}
